@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import "dotenv/config"
 import { bookingRouter } from "./routes/all-routes.js";
+import cors from "cors";
 
 // create database
 
