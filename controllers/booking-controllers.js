@@ -1,8 +1,11 @@
 import { booking } from "../models/booking-models.js";
 
 // Writing function for our booking api
-export const getAllBookings = (req, res,) => {
-res.status(200).json("These are all booking")
+export const getAllBookings = async (req, res,) => {
+
+     const bookings = await booking.find();
+
+res.status(200).json(bookings);
 }
 
 export const getOneBooking = (req, res,) => {
@@ -16,7 +19,7 @@ export const postBookings = async (req, res) => {
 
 
 
-    res.status(201).json (bookings)
+    res.status(201).json ('booking was added')
 }
 
 export const updateBookings = (req, res) => {
