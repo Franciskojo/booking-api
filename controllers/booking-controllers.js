@@ -9,20 +9,14 @@ export const getOneBooking = (req, res,) => {
     res.status(200).json("This is one booking");
 }
 
-export const postBookings = async (req, res, next) => {
-    const newBooking = new booking()
+export const postBookings = async (req, res) => {
+    const newBooking = new booking(req.body)
+
+    const bookings = await newBooking.save()
 
 
 
-    const bookings = await newBooking.save(req.body)
-
-
-
-    try {
-        res.status(201).json (bookings)
-    } catch (error) {
-       next(error) 
-    }
+    res.status(201).json (bookings)
 }
 
 export const updateBookings = (req, res) => {

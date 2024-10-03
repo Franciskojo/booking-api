@@ -10,6 +10,7 @@ const bookingapp = express();
 
 
 //  routeuses
+bookingapp.use(cors())
 bookingapp.use(express.json())
 bookingapp.use(bookingRouter);
 
